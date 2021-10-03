@@ -11,7 +11,7 @@ function setup() {
     let theta = random(TWO_PI)
     let rocketPos = createVector(r*cos(theta),r*sin(theta))//x , y
     let rocketVel = rocketPos.copy()
-    // rocketVel.rotate(HALF_PI)
+    rocketVel.rotate(HALF_PI)
     rocketVel.setMag( sqrt(earth.G*earth.mass/rocketPos.mag()) )
     rocketPos.x -= rImg.width/2
     rocketPos.y -= rImg.height/2
