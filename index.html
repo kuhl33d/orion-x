@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Parker solar probe</title>
+  <!-- Load Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:900|Merriweather&display=swap" rel="stylesheet">
+  <!-- Load Styles -->
+  <link href="css/styles.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+  <div id="everything">
+    <img class="sun" src="sun.png">
+    <div class="top" contenteditable spellcheck="false" id="title">
+      <h1> Orion - X <span>Built to take humans
+          farther than they've ever gone before</span></h1>
+    </div>
+
+    <div id="options">
+      <div class="quote"> LET'S UNLOCK THE SECRETS OF THE SUN !</div>
+      <div id="start">
+        <div>Want to start the game?</div><button id="btn"> START</button>
+      </div>
+      <div id="chatbot">
+        <div>Want to have a little chat?</div><button id="btn"> HAVE A LITTLE CHAT</button>
+      </div>
+    </div>
+  </div>
+  <div class="container " id="main">
+    <div class="leftpane" id="scientist">
+      <img class="astr-img element" src="astronaut.png">
+    </div>
+    <div class="middlepane " id="dialogue">
+      <div class=" bubble2 bubble-bottom-right element2" id="rightdialogue">
+        <p id="text1">
+          Hello Professor!
+          I heard you're working on a new mission, called..mm..par..parker..
+        </p>
+        <p id="text3"> Yeah I heard you guys are exploring the sun! But how is that important anyway?</p>
+        <p id="text5"> No I haven't, what does it mean?</p>
+        <p id="text7"> But what does it have to do with us here on Earth?</p>
+        <p id="text9"> Wow! This is concerning</p>
+        <p id="text11"> So they technically mess with the magnetic field of the earth. But how does this cause power
+          outages?</p>
+        <p id="text13"> Seems very dangerous</p>
+        <p id="text15">What else?</p>
+        <p id="text17"> Wow! This is very dangerous. What are you going to do about it? And what is the purpose of the
+          parker solar probe mission?</p>
+        <p id="text19">And what is the scientific purpose?</p>
+        <p id="text21">This is so impressive!</p>
+        <p id="text23">I'd love to know more about this parker solar probe mission.</p>
+      </div>
+      <div class="bubble1 bubble-bottom-left element2" id="leftdialogue">
+        <p id="text2">
+          Hi! Well it is called Parker Solar Probe
+        </p>
+        <p id="text4"> Nice question!
+          Have you ever heard about the solar wind?
+        </p>
+        <p id="text6"> The solar wind is created by the outward expansion of plasma (a collection of charged particles)
+          from the Sun's corona (outermost atmosphere). This plasma is continually heated to the point that the Sun's
+          gravity can't hold it down. It then travels along the Sun's magnetic field lines that extend radially outward.
+        </p>
+        <p id="text8"> Take for example an event that occurred on march 14, 1989. At 2:45 power was cut off to six
+          million people living in eastern Canada for 9 hours. This blackout was caused by an an explosive event on the
+          sun- coronal mass ejection- this particular event blasted billions of tons of solar wind directly at the
+          earth. Inducing huge electrical charges, this electrical activity can damage our power distribution systems.
+        </p>
+        <p id="text10">As these charged particles rain into the atmosphere and above the poles, they release tremendous
+          amounts of energy as they react with the gases on earth atmosphere.</p>
+        <p id="text12">When the magnetic field is pushed and pulled by this onslaught of solar plasma, it creates huge
+          power fluctuations that can affect power lines, overloading and damaging power transformers, tripping circuit
+          breakers, and causing anything from flickering lights to widespread and potentially dangerous power outages.
+        </p>
+        <p id="text14">Solar winds also interfere with television and telephone signals, airplane and ship navigation.
+          And they can cause pipelines to corrode faster than normal.</p>
+        <p id="text16">And what about the astronauts working in space, they could be in great danger if they caught
+          unaware by a solar storm.</p>
+        <p id="text18">We are sending the parker solar probe to the sun to learn more about the physics of how the solar
+          wind is being accelerated at the surface of the sun and it's corona, so that we can predict what the solar
+          wind is going to be when it gets to Earth. And that is sort of the practical purpose.</p>
+        <p id="text20">The scientific purpose is that we want to know how the stars work, as this is the only star we
+          can go to.</p>
+        <p id="text22">I know. And the details of the trip might as well impress you, we're getting closer to the sun
+          than any other mission ever done!</p>
+        <p id="text24">Sure! Let's play a little game and you will see everything by yourself.</p>
+      </div>
+    </div>
+
+    <!-- class="bubble bubble-bottom-left"  -->
+    <div class="rightpane" id="man">
+      <img class="astr-img element" src="man.png">
+    </div>
+
+  </div>
+  <img id="musicpic" src="musicpic.png">
+  <!-- <button id="play">
+    START PLAYING
+  </button> -->
+  <div>
+    <button id="play">PLAY GAME</button>
+  </div>
+  <audio id="music">
+    <source src="Juno In The Space Maze - Loopop.mp3" type="audio/mpeg">
+  </audio>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
