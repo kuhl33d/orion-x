@@ -1,8 +1,8 @@
 let earth,rocket,bgImg,rImg,earthImg
 function preload(){
-    bgImg = loadImage('img/bg.jpg')
-    rImg = loadImage('img/rocket/5.png')
-    earthImg = loadImage('img/earth.gif')
+    bgImg = loadImage('https://kuhl33d.github.io/orion-x/img/bg.jpg')
+    rImg = loadImage('https://kuhl33d.github.io/orion-x/img/rocket/5.png')
+    earthImg = loadImage('https://kuhl33d.github.io/orion-x/img/earth.gif')
 }
 function setup() {
     createCanvas(1240, 780)
@@ -23,7 +23,7 @@ function draw(){
     background(bgImg)
     translate(width/2,height/2)
     sun.attract(rocket)
-    planets[i].show()
+    rocket.show()
     sun.show()
 
 }
