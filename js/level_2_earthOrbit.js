@@ -6,13 +6,15 @@ function preload(){
 }
 function setup() {
     createCanvas(1240, 780)
-    earth = new body(100,createVector(0,0),createVector(0,0),100,earthImg)
+    earth = new body(100,createVector(earthImg.width/2,earthImg.height/2),createVector(0,0),100,earthImg)
     let r = 500
     let theta = random(TWO_PI)
     let rocketPos = createVector(r*cos(theta),r*sin(theta))//x , y
     let rocketVel = rocketPos.copy()
     // rocketVel.rotate(HALF_PI)
     rocketVel.setMag( sqrt(earth.G*earth.mass/rocketPos.mag()) )
+    rocketPos.x -= rImg.width/2
+    rocketPos.y -= rImg.height/2
     rocket = new body(100,rocketPos,rocketVel,0,rImg)
 }
 
@@ -33,8 +35,6 @@ function body(_mass,_pos,_vel,_G,_img) {
     this.path = []
     this.img = _img
     this.show = function(){
-        this.pos.x -= this.img.width/2
-        this.pos.y -= this.img.height/2
         image(this.img,this.pos.x, this.pos.y, this.r, this.r)
         stroke(30)
         for(let i=0;i<this.path.length-1;i++){
