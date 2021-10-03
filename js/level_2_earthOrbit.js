@@ -6,28 +6,24 @@ function preload(){
 }
 function setup() {
     createCanvas(1240, 780)
-    sun = new body(100,createVector(0,0),createVector(0,0),274)
-    for (let i = 0; i < nPlanets; i++) {   
-        //planet pos
-        let r = random(sun.r, min(windowWidth/2,windowHeight/2))//min max
-        let theta = random(TWO_PI)
-        let planetPos = createVector(r*cos(theta),r*sin(theta))//x , y
-        //planet vel
-        let planetVel = planetPos.copy()
-        planetVel.rotate(HALF_PI)
-        planetVel.setMag( sqrt(sun.G*sun.mass/planetPos.mag()) )
-        // planetVel.mult(random(1-destablise,1+destablise))
-        planets.push(new body(random(5,45),planetPos,planetVel,0))
-    }
+    earth = new body(100,createVector(0,0),createVector(0,0),274,earthImg)
+    //planet pos
+    let r = random(sun.r, min(windowWidth/2,windowHeight/2))//min max
+    let theta = random(TWO_PI)
+    let rocketPos = createVector(r*cos(theta),r*sin(theta))//x , y
+    //planet vel
+    let rocketVel = rocketPos.copy()
+    rocketVel.rotate(HALF_PI)
+    rocketVel.setMag( sqrt(sun.G*sun.mass/rocketPos.mag()) )
+    // rocketVel.mult(random(1-destablise,1+destablise))
+    rocket = new body(random(5,45),rocketPos,rocketVel,0,rImg)
 }
 
 function draw(){
-    background(180)
+    background(bgImg)
     translate(width/2,height/2)
-    for(let i=0;i<nPlanets;i++){
-        sun.attract(planets[i])
-        planets[i].show()
-    }
+    sun.attract(rocket)
+    planets[i].show()
     sun.show()
 
 }
@@ -40,8 +36,7 @@ function body(_mass,_pos,_vel,_G,_img) {
     this.path = []
     this.img = _img
     this.show = function(){
-        noStroke();fill(255);
-        ellipse(this.pos.x, this.pos.y, this.r, this.r)
+        image(this.img,this.pos.x, this.pos.y, this.r, this.r)
         stroke(30)
         for(let i=0;i<this.path.length-1;i++){
             line(this.path[i].x,this.path[i].y, this.path[i+1].x,this.path[i+1].y)
