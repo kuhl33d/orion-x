@@ -7,24 +7,21 @@ function preload(){
 function setup() {
     createCanvas(1240, 780)
     earth = new body(100,createVector(0,0),createVector(0,0),274,earthImg)
-    //planet pos
-    let r = random(sun.r, min(windowWidth/2,windowHeight/2))//min max
+    let r = random(earth.r, min(windowWidth/2,windowHeight/2))//min max
     let theta = random(TWO_PI)
     let rocketPos = createVector(r*cos(theta),r*sin(theta))//x , y
-    //planet vel
     let rocketVel = rocketPos.copy()
     rocketVel.rotate(HALF_PI)
-    rocketVel.setMag( sqrt(sun.G*sun.mass/rocketPos.mag()) )
-    // rocketVel.mult(random(1-destablise,1+destablise))
+    rocketVel.setMag( sqrt(earth.G*earth.mass/rocketPos.mag()) )
     rocket = new body(random(5,45),rocketPos,rocketVel,0,rImg)
 }
 
 function draw(){
     background(bgImg)
     translate(width/2,height/2)
-    sun.attract(rocket)
+    earth.attract(rocket)
     rocket.show()
-    sun.show()
+    earth.show()
 
 }
 function body(_mass,_pos,_vel,_G,_img) {
